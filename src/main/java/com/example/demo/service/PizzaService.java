@@ -6,5 +6,5 @@ import java.util.List;
 
 @Service
 public interface PizzaService {
-    Pizza getPizzabyId(long pizzaId);
+    Pizza getPizzabyId(int pizzaId);
 }

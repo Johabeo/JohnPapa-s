@@ -16,5 +16,5 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer addCustomer(Customer customer) {return customerRepository.save(customer);}
 
     @Override
-    public Customer getCustomerById(long customerId) { return customerRepository.findByCustomerId(customerId);}
+    public Customer getCustomerById(int customerId) { return customerRepository.findByCustomerId(customerId);}
 }

@@ -19,8 +19,8 @@ public class OrderServiceImpl implements OrderService {
     public Order addOrder(Order order) {return orderRepository.save(order);}
 
     @Override
-    public Order getOrderByUserId(long userId) { return userRepository.findByOrderByUserId(UserId);}
+    public Order getOrderByUserId(int userId) { return userRepository.findByOrderByUserId(UserId);}
 
     @Override
-    public Order getOrderById(long orderId) { return orderRepository.findByOrderId(orderId);}
+    public Order getOrderById(int orderId) { return orderRepository.findByOrderId(orderId);}
 }
