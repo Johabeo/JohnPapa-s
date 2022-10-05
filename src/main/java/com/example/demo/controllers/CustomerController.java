@@ -1,11 +1,7 @@
 package com.example.demo.controllers;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
@@ -18,5 +14,9 @@ public class CustomerController {
         return new ResponseEntity<Customer>(returnCustomer, HttpStatus.CREATED);
     }
 
-
+    @GetMapping("/{id}")
+    public ResponseEntity<Customer> getCustomerById(@PathVariable("id") String id){
+        Customer customer = customerService.getCustomerById(id);
+        return new ResponseEntity<Customer>(customer, HttpStatus.OK);
+    }
 }
