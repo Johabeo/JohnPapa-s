@@ -1,8 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.entities.Order;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface OrderService {
-    Order getOrderbyId(long order);
+    Order getOrderById(int orderId);
 }
