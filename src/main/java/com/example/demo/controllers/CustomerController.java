@@ -1,13 +1,19 @@
 package com.example.demo.controllers;
 
+import com.example.demo.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
-    //Add customer service
-//    private final CustomerService customerService;
+
+    private final CustomerService customerService;
+
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
+
     @PostMapping("/add")
     public ResponseEntity<Customer> addCustomer(@RequestBody Customer newCustomer){
         Customer returnCustomer = customerService.addCustomer(newCustomer);
