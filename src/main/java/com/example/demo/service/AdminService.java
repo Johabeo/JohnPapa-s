@@ -4,5 +4,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface AdminService {
-    Admin getAdminbyId(long admin);
+    Admin getAdminbyId(long adminId);
 }

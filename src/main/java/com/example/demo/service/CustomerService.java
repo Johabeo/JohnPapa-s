@@ -4,5 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface CustomerService {
-    Customer getCustomerbyId(long customer);
+    Customer getCustomerbyId(long customerId);
+
+    Customer addCustomer(Customer customer);
 }

@@ -4,5 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface OrderService {
-    Order getOrderbyId(long order);
+    Order getOrderbyId(long orderId);
+    Order getOrderbyUserId(long userId);
+    Order addOrder(Order order);
 }

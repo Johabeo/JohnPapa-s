@@ -1,4 +1,17 @@
 package com.example.demo.service.implementation;
 
-public class IngredientsServiceImpl {
+import com.example.demo.service.IngredientsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class IngredientsServiceImpl implements IngredientsService {
+
+    @Autowired
+    private IngredientsRepository ingredientsRepository;
+
+    @Override
+    public Ingredients getIngredientsById(long ingredientsId) { return ingredientsRepository.findByIngredientsId(ingredientsId);}
 }
