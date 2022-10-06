@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.entities.Ingredient;
 import com.example.demo.service.IngredientService;
+import com.example.demo.entities.Ingredient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

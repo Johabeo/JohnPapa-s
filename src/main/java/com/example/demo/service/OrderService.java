@@ -11,5 +11,4 @@ public interface OrderService {
     List<Order> getOrderByOrderStatus(String orderStatus);
     List<Order> getOrderByUserId(int userId);
     Order addOrder(Order order);
-
 }

@@ -1,9 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.Pizza;
-import com.example.demo.service.OrderService;
 import com.example.demo.service.PizzaService;
-import org.hibernate.criterion.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
