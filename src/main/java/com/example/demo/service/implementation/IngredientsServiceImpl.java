@@ -1,17 +1,22 @@
 package com.example.demo.service.implementation;
 
+import com.example.demo.entities.Ingredient;
+import com.example.demo.repo.IngredientRepo;
 import com.example.demo.service.IngredientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class IngredientsServiceImpl implements IngredientsService {
 
     @Autowired
-    private IngredientsRepository ingredientsRepository;
+    private IngredientRepo ingredientsRepository;
 
     @Override
-    public Ingredients getIngredientsById(int ingredientsId) { return ingredientsRepository.findByIngredientsId(ingredientsId);}
+    public Ingredient getIngredientById(int ingredientsId) { return ingredientsRepository.findByIngredientsId(ingredientsId);}
+
+    @Override
+    public Ingredient addIngredients(Ingredient ingredient) {
+        return null;
+    }
 }
