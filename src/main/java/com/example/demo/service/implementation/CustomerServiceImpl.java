@@ -12,11 +12,11 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private CustomerRepo customerRepository;
+    private CustomerRepo customerRepo;
 
     @Override
-    public Customer addCustomer(Customer customer) {return customerRepository.save(customer);}
+    public Customer addCustomer(Customer customer) {return customerRepo.save(customer);}
 
     @Override
-    public Customer getCustomerById(int customerId) { return customerRepository.findById(customerId).get();}
+    public Customer getCustomerById(int customerId) { return customerRepo.getReferenceById(customerId);}
 }

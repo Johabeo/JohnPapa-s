@@ -8,7 +8,8 @@ import java.util.List;
 @Service
 public interface OrderService {
     Order getOrderById(int orderId);
+    List<Order> getOrderByOrderStatus(String orderStatus);
     List<Order> getOrderByUserId(int userId);
     Order addOrder(Order order);
-    List<Order> getOrderByStatus(String status);
+
 }

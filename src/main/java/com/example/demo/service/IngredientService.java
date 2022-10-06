@@ -4,7 +4,7 @@ import com.example.demo.entities.Ingredient;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface IngredientsService {
+public interface IngredientService {
     Ingredient getIngredientById(int ingredientId);
 
     Ingredient addIngredient(Ingredient ingredient);

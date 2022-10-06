@@ -32,7 +32,7 @@ public class OrderController {
 
     @GetMapping("/status")
     public ResponseEntity<List<Order>> getOrderByStatus(@PathVariable("status") String status) {
-        List<Order> orders = orderService.getOrderByStatus(status);
+        List<Order> orders = orderService.getOrderByOrderStatus(status);
         return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
 

@@ -12,8 +12,8 @@ import java.util.List;
 public class PizzaServiceImpl implements PizzaService {
 
     @Autowired
-    private PizzaRepo pizzaRepository;
+    private PizzaRepo pizzaRepo;
 
     @Override
-    public Pizza getPizzaById(int pizzaId) { return pizzaRepository.findById(pizzaId).get();}
+    public Pizza getPizzaById(int pizzaId) { return pizzaRepo.getReferenceById(pizzaId);}
 }

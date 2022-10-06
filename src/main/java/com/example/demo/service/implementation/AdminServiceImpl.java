@@ -12,8 +12,8 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
 
     @Autowired
-    private AdminRepo adminRepository;
+    private AdminRepo adminRepo;
 
     @Override
-    public Admin getAdminById(int adminId) { return adminRepository.findById(adminId).get();}
+    public Admin getAdminById(int adminId) { return adminRepo.getReferenceById(adminId);}
 }
