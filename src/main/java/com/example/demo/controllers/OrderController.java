@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -29,9 +31,9 @@ public class OrderController {
     }
 
     @GetMapping("/status")
-    public ResponseEntity<Order> getOrderByStatus(@PathVariable("status") String status) {
-        Order order = orderService.getOrderByStatus(status);
-        return new ResponseEntity<Order>(order, HttpStatus.OK);
+    public ResponseEntity<List<Order>> getOrderByStatus(@PathVariable("status") String status) {
+        List<Order> orders = orderService.getOrderByOrderStatus(status);
+        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
 
     @GetMapping("/userid")

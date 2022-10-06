@@ -1,8 +1,11 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.Pizza;
+import com.example.demo.service.OrderService;
 import com.example.demo.service.PizzaService;
+import org.hibernate.criterion.Order;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +24,7 @@ public class PizzaController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Pizza> getPizzaById(@PathVariable("id") int id) {
-        Pizza pizza = pizzaService.getPizzabyId(id);
+        Pizza pizza = pizzaService.getPizzaById(id);
         return new ResponseEntity<Pizza>(pizza, HttpStatus.OK);
     }
 }

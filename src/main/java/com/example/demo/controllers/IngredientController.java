@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
+import com.example.demo.service.IngredientService;
 import com.example.demo.entities.Ingredient;
-import com.example.demo.service.IngredientsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ingredients")
 public class IngredientController {
 
-    private final IngredientsService ingredientsService;
+    private final IngredientService ingredientsService;
 
-    public IngredientController(IngredientsService ingredientsService) {
+    public IngredientController(IngredientService ingredientsService) {
         this.ingredientsService = ingredientsService;
     }
 

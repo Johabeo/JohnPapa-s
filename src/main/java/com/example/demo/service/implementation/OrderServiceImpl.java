@@ -15,19 +15,19 @@ public class OrderServiceImpl implements OrderService {
     private OrderRepo orderRepository;
 
     @Autowired
-    private UserRepo userRepository;
+    private OrderRepo orderRepo;
 
     @Override
-    public Order addOrder(Order order) {return orderRepository.save(order);}
+    public Order addOrder(Order order) {return orderRepo.save(order);}
 
     @Override
-    public Order getOrderByStatus(String status) {
+    public List<Order> getOrderByOrderStatus(String orderStatus){ return orderRepo.getOrderByOrderStatus(orderStatus);}
+
+    @Override
+    public Order getOrderByUserId(int userId) {
         return null;
     }
 
     @Override
-    public Order getOrderByUserId(int userId) { return userRepository.findByOrderByUserId(UserId);}
-
-    @Override
-    public Order getOrderById(int orderId) { return orderRepository.findByOrderId(orderId);}
+    public Order getOrderById(int orderId) { return orderRepo.getReferenceById(orderId);}
 }
