@@ -12,6 +12,9 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
+    private OrderRepo orderRepository;
+
+    @Autowired
     private OrderRepo orderRepo;
 
     @Override
@@ -19,6 +22,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getOrderByOrderStatus(String orderStatus){ return orderRepo.getOrderByOrderStatus(orderStatus);}
+
+    @Override
+    public Order getOrderByUserId(int userId) {
+        return null;
+    }
 
     @Override
     public Order getOrderById(int orderId) { return orderRepo.getReferenceById(orderId);}

@@ -1,7 +1,9 @@
 package com.example.demo.controllers;
 
 import com.example.demo.service.IngredientService;
+import com.example.demo.entities.Ingredient;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +19,7 @@ public class IngredientController {
     }
 
     @RequestMapping("/{id}")
-    public RequestEntity<ingredient> getIngredientById(@PathVariable("id") String id) {
+    public ResponseEntity<Ingredient> getIngredientById(@PathVariable("id") int id) {
         Ingredient ingredient = ingredientsService.getIngredientById(id);
         return new ResponseEntity<Ingredient>(ingredient, HttpStatus.OK);
     }

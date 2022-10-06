@@ -9,6 +9,6 @@ import java.util.List;
 public interface OrderService {
     Order getOrderById(int orderId);
     List<Order> getOrderByOrderStatus(String orderStatus);
+    Order getOrderByUserId(int userId);
     Order addOrder(Order order);
-
 }
