@@ -15,5 +15,5 @@ public class PizzaServiceImpl implements PizzaService {
     private PizzaRepo pizzaRepository;
 
     @Override
-    public Pizza getPizzaById(int pizzaId) { return pizzaRepository.findByPizzaId(pizzaId);}
+    public Pizza getPizzaById(int pizzaId) { return pizzaRepository.findById(pizzaId).get();}
 }

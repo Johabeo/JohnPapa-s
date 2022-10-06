@@ -1,10 +1,12 @@
 package com.example.demo.controllers;
 
+import com.example.demo.entities.Order;
 import com.example.demo.service.OrderService;
-import org.hibernate.criterion.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/order")
@@ -23,21 +25,21 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrderById(@PathVariable("id") String id){
+    public ResponseEntity<Order> getOrderById(@PathVariable("id") int id){
         Order order = orderService.getOrderById(id);
         return new ResponseEntity<Order>(order, HttpStatus.OK);
     }
 
     @GetMapping("/status")
-    public ResponseEntity<Order> getOrderByStatus(@PathVariable("status") String status) {
-        Order order = orderService.getOrderByStatus(status);
-        return new ResponseEntity<Order>(order, HttpStatus.OK);
+    public ResponseEntity<List<Order>> getOrderByStatus(@PathVariable("status") String status) {
+        List<Order> orders = orderService.getOrderByStatus(status);
+        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
 
     @GetMapping("/userid")
-    public  ResponseEntity<Order> getOrderByUserId(@PathVariable("userid") String userId) {
-        Order order = orderService.getOrderByUserId(userId);
-        return new ResponseEntity<Order>(order, HttpStatus.OK);
+    public  ResponseEntity<List<Order>> getOrderByUserId(@PathVariable("userid") int userId) {
+        List<Order> orders = orderService.getOrderByUserId(userId);
+        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
 
 
