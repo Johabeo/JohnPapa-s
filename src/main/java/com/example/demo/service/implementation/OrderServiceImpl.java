@@ -1,5 +1,7 @@
 package com.example.demo.service.implementation;
 
+import com.example.demo.entities.Order;
+import com.example.demo.repo.OrderRepo;
 import com.example.demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,17 +12,14 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
-    private OrderRepository orderRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+    private OrderRepo orderRepo;
 
     @Override
-    public Order addOrder(Order order) {return orderRepository.save(order);}
+    public Order addOrder(Order order) {return orderRepo.save(order);}
 
     @Override
-    public Order getOrderByUserId(int userId) { return userRepository.findByOrderByUserId(UserId);}
+    public List<Order> getOrderByOrderStatus(String orderStatus){ return orderRepo.getOrderByOrderStatus(orderStatus);}
 
     @Override
-    public Order getOrderById(int orderId) { return orderRepository.findByOrderId(orderId);}
+    public Order getOrderById(int orderId) { return orderRepo.getReferenceById(orderId);}
 }

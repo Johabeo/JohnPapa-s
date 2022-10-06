@@ -1,5 +1,7 @@
 package com.example.demo.service.implementation;
 
+import com.example.demo.entities.Admin;
+import com.example.demo.repo.AdminRepo;
 import com.example.demo.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,8 +12,8 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
 
     @Autowired
-    private AdminRepository adminRepository;
+    private AdminRepo adminRepo;
 
     @Override
-    public Admin getAdminById(int adminId) { return adminRepository.findByAdminId(adminId);}
+    public Admin getAdminById(int adminId) { return adminRepo.getReferenceById(adminId);}
 }

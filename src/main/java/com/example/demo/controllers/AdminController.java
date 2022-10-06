@@ -1,9 +1,12 @@
 package com.example.demo.controllers;
 
+import com.example.demo.entities.Admin;
+import com.example.demo.entities.Customer;
 import com.example.demo.service.AdminService;
 import com.example.demo.service.CustomerService;
 import com.example.demo.service.OrderService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
