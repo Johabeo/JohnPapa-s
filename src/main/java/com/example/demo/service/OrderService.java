@@ -5,5 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface OrderService {
-    Order getOrderById(int orderId);
+    Order getOrderbyId(int orderId);
+    Order getOrderbyUserId(int userId);
+    Order addOrder(Order order);
 }

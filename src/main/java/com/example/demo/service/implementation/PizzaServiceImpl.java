@@ -5,13 +5,15 @@ import com.example.demo.repo.PizzaRepo;
 import com.example.demo.service.AdminService;
 import com.example.demo.service.PizzaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
 
+@Service
 public class PizzaServiceImpl implements PizzaService {
 
     @Autowired
     private PizzaRepo pizzaRepository;
 
     @Override
-    public Pizza getPizzaById(int pizzaId) { return pizzaRepository.getReferenceById(pizzaId);}
-
+    public Pizza getPizzaById(int pizzaId) { return pizzaRepository.findByPizzaId(pizzaId);}
 }
