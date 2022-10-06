@@ -13,7 +13,7 @@ public class IngredientsServiceImpl implements IngredientsService {
     private IngredientRepo ingredientsRepository;
 
     @Override
-    public Ingredient getIngredientById(int ingredientsId) { return ingredientsRepository.findByIngredientsId(ingredientsId);}
+    public Ingredient getIngredientById(int ingredientsId) { return ingredientsRepository.getReferenceById(ingredientsId);}
 
     @Override
     public Ingredient addIngredients(Ingredient ingredient) {

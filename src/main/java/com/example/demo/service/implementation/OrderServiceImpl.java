@@ -12,9 +12,6 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
-    private OrderRepo orderRepository;
-
-    @Autowired
     private OrderRepo orderRepo;
 
     @Override
@@ -24,8 +21,8 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> getOrderByOrderStatus(String orderStatus){ return orderRepo.getOrderByOrderStatus(orderStatus);}
 
     @Override
-    public Order getOrderByUserId(int userId) {
-        return null;
+    public List<Order> getOrderByUserId(int userId) {
+        return orderRepo.getOrderByCustomerId(userId);
     }
 
     @Override

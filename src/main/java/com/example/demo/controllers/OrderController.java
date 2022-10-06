@@ -36,10 +36,10 @@ public class OrderController {
         return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
 
-    @GetMapping("/userid")
-    public  ResponseEntity<Order> getOrderByUserId(@PathVariable("userid") int userId) {
-        Order order = orderService.getOrderByUserId(userId);
-        return new ResponseEntity<Order>(order, HttpStatus.OK);
+    @GetMapping("/byCustomer/{userid}")
+    public  ResponseEntity<List<Order>> getOrderByUserId(@PathVariable("userid") int userId) {
+        List<Order> orders = orderService.getOrderByUserId(userId);
+        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
 
 

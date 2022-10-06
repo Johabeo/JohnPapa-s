@@ -3,8 +3,6 @@ package com.example.demo.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.aspectj.weaver.ast.Or;
-
 import javax.persistence.*;
 import java.util.Set;
 
