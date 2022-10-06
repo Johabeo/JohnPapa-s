@@ -22,7 +22,7 @@ public class PizzaController {
 
     @GetMapping("/{id}")
     public RequestEntity<Pizza> getPizzaById(@PathVariable("id") String id) {
-        Pizza pizza = pizzaService.getOrderById(id);
+        Pizza pizza = pizzaService.getPizzaById(id);
         return new ResponseEntity<Order>(pizza, HttpStatus.OK);
     }
 }
